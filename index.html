@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Esempio di menu a scomparsa per sito web realizzato con JQuery sldeToggle e CSS. ">
+    <meta name="author" content="Giuseppe Garbin">
+    <title>Menu a scomparsa con JQuery slideToggle e CSS</title>
+
+    <!-- DEMO TEMPLATE STYLE -->
+    <link href="assets/css/demo.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- CSS -->
+    <style type="text/css">
+
+    /* Impostazioni pagina demo */
+    body { background: #22313F; }
+    .description { color:#FFFFFF; margin-top:100px; text-align: center;}
+    .credits { margin-top: 50px; }
+
+    /* Menu */
+    #menu {
+      width:100%;
+      background: #19B5FE;
+      height: 75px;
+    }
+    .navigation { margin:0;  padding:0; font-size: 1.5em; text-align: center; }
+    ul.navigation { list-style:none; }
+    ul.navigation li { display:inline; padding:0 50px 0 0; }
+    ul.navigation li:last-child { padding-right:0; }
+    ul.navigation li a { color:#FFFFFF; text-decoration:none; }
+    ul.navigation li a:hover { color:#34495E; }
+
+    /* Pulsante di attivazione */
+    .menu_btn {
+      cursor:pointer;
+      display:block;
+      margin:25px auto;
+      width:130px;
+      height:130px;
+      background-image: url('assets/img/sprite-menu.png');
+      background-repeat: no-repeat;
+      background-position: top left;
+      color: transparent;
+      text-indent: -9999px;
+    }
+    .menu_btn:hover { background-position: bottom left; }
+    .menu_btn.opened { background-position: bottom right; }
+    .menu_btn.opened:hover { background-position: top right; }
+    
+  </style>
+
+  </head>
+  <body>
+
+    <div id="menu" style="display:none;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="navigation">
+              <li><a href="#" >Link 1</a></li>
+              <li><a href="#" >Link 2</a></li>
+              <li><a href="#" >Link 3</a></li>
+              <li><a href="#" >Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="menu_btn"></div>
+        </div>
+      </div>
+      <div class="row description">
+        <div class="col-md-12">
+          <h1>Demo</h1>
+          <h4>Come realizzare un menu a scomparsa con JQuery toggle e CSS</h4>
+          <p class="credits">Realizzato da <a href="http://www.giuseppegarbin.com">Giuseppe Garbin</a></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- JSCRIPT -->
+    <script src="assets/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+
+      $(".menu_btn").click(function(){
+        $("#menu").slideToggle();
+        $(this).toggleClass("opened");
+      });
+
+    </script>
+
+  </body>
+</html>
